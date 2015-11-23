@@ -1,4 +1,4 @@
-TARGET=BCDock
+TARGET=/usr/local/bin/BCDock
 
 CC=gcc
 CFLAGS=-c -Wall -std=gnu99
