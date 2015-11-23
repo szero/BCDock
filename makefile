@@ -20,3 +20,7 @@ $(TARGET): $(OBJECTS)
 remove:
 	rm -f $(TARGET) $(OBJECTS)
 	@echo "Uninstalled succesfully."
+
+clean:
+	rm -f $(OBJECTS)
+	@echo "Removed all object files."
