@@ -10,8 +10,11 @@ This is a binary-coded-decimal clock made in ncurses. Intended purpouse is to ru
 * Install by typeing `sudo make`
 * Uninstall by typeing `sudo make remove`
 * Program installs in `/usr/local/bin`. This directory is in `$PATH` variable on most Linux systems. So you can run it from terminal by writing `BCDock` from any location.
+# Usage
+
+* Start as usual to use default terminal colors for clock.
+* Possible start parameters `-bk`,`-rd`,`-gr`,`-yl`,`-bl`,`-mg`,`-cy`,`wh`
 
 ## TODO
 
-* Add collors as start parameter
 * Add date as start parameter
