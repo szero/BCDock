@@ -12,7 +12,6 @@ void init_screen(void)
     mainwin = initscr();
     cbreak();
     noecho();
-    use_default_colors();
     nodelay(mainwin, TRUE);
     curs_set(0);
     refresh();
@@ -29,6 +28,7 @@ void colors(void)
         printf("Your terminal doesn\'t even have 50 shades od gray ...\n");
         exit(1);
         }
+        use_default_colors();
         start_color();
         init_pair(1, -1, -1);
         init_pair(2, COLOR_BLACK, -1);

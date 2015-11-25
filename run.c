@@ -4,7 +4,8 @@
 #include <unistd.h>
 #include <string.h>
 
-//#define CMD_IS(X) strcmp(cmd, X) == 0
+#define CMD_IS(X) strcmp(argv[1], X) == 0
+
 char dooloop = 1;
 int key_press;
 unsigned char posX,posY;
@@ -17,21 +18,21 @@ int main(int argc, char *argv[])
     colors();
     if (argc < 2) {
         color=1;
-        } else if (strcmp(argv[1],"-bk") == 0) {
+        } else if (CMD_IS("-bk")) {
             color=2;    
-        } else if (strcmp(argv[1],"-rd") == 0) {
+        } else if (CMD_IS("-rd")) {
             color=3;
-        } else if (strcmp(argv[1],"-gr") == 0) {
+        } else if (CMD_IS("-gr")) {
             color=4;
-        } else if (strcmp(argv[1],"-yl") == 0) {
+        } else if (CMD_IS("-yl")) {
             color=5;
-        } else if (strcmp(argv[1],"-bl") == 0) {
+        } else if (CMD_IS("-bl")) {
             color=6;    
-        } else if (strcmp(argv[1],"-mg") == 0) {
+        } else if (CMD_IS("-mg")) {
             color=7;
-        } else if (strcmp(argv[1],"-cy") == 0) {
+        } else if (CMD_IS("-cy")) {
             color=8;
-        } else if (strcmp(argv[1],"-wh") == 0) {
+        } else if (CMD_IS("-wh")) {
             color=9;
     }
     
