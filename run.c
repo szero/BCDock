@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     draw_time(posX+16,posY+0,time_pcs[0],3,color);
     draw_time(posX+19,posY+0,time_pcs[1],4,color);
     redraw();
-    usleep(1000);
+    sleep(1);
     }
 end_window();
 return 0;
