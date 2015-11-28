@@ -37,34 +37,34 @@ int main(int argc, char *argv[])
     }
     
     while (dooloop) {
-    key_press = return_key();
-    if (key_press == 113) dooloop =0;
-    posX=cur_col/2-11;
-    posY=cur_ln/2-3;
-    win_size(pos);
-    if (cur_ln != pos[0] || cur_col != pos[1]) {
-        clr_scr();
-        cur_ln = pos[0];
-        cur_col = pos[1];
-    }
-    maketime();
-    draw_bar(posX+0,posY+4,2,color);
-    draw_bar(posX+3,posY+0,4,color);
-    draw_bar(posX+8,posY+2,3,color);
-    draw_bar(posX+11,posY+0,4,color);
-    draw_bar(posX+16,posY+2,3,color);
-    draw_bar(posX+19,posY+0,4,color);
-    split_nr(time_pcs,cur_hr());
-    draw_time(posX+0,posY+0,time_pcs[0],2,color);
-    draw_time(posX+3,posY+0,time_pcs[1],4,color);
-    split_nr(time_pcs,cur_min());
-    draw_time(posX+8,posY+0,time_pcs[0],3,color);
-    draw_time(posX+11,posY+0,time_pcs[1],4,color);
-    split_nr(time_pcs,cur_sec());
-    draw_time(posX+16,posY+0,time_pcs[0],3,color);
-    draw_time(posX+19,posY+0,time_pcs[1],4,color);
-    redraw();
-    sleep(1);
+        key_press = return_key();
+        if (key_press == 113) dooloop =0;
+        posX=cur_col/2-11;
+        posY=cur_ln/2-3;
+        win_size(pos);
+        if (cur_ln != pos[0] || cur_col != pos[1]) {
+            clr_scr();
+            cur_ln = pos[0];
+            cur_col = pos[1];
+        }
+        maketime();
+        draw_bar(posX+0,posY+4,2,color);
+        draw_bar(posX+3,posY+0,4,color);
+        draw_bar(posX+8,posY+2,3,color);
+        draw_bar(posX+11,posY+0,4,color);
+        draw_bar(posX+16,posY+2,3,color);
+        draw_bar(posX+19,posY+0,4,color);
+        split_nr(time_pcs,cur_hr());
+        draw_time(posX+0,posY+0,time_pcs[0],2,color);
+        draw_time(posX+3,posY+0,time_pcs[1],4,color);
+        split_nr(time_pcs,cur_min());
+        draw_time(posX+8,posY+0,time_pcs[0],3,color);
+        draw_time(posX+11,posY+0,time_pcs[1],4,color);
+        split_nr(time_pcs,cur_sec());
+        draw_time(posX+16,posY+0,time_pcs[0],3,color);
+        draw_time(posX+19,posY+0,time_pcs[1],4,color);
+        redraw();
+        sleep(1);
     }
 end_window();
 return 0;
