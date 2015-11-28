@@ -121,7 +121,6 @@ int return_key(void)
     return getch();
 }
 
-
 void end_window(void)
 {
     endwin();

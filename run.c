@@ -7,7 +7,6 @@
 #define CMD_IS(X) strcmp(argv[1], X) == 0
 
 char dooloop = 1;
-int key_press;
 unsigned char posX,posY;
 char color,time_pcs[2];
 int cur_col,cur_ln,pos[2];
@@ -37,8 +36,7 @@ int main(int argc, char *argv[])
     }
     
     while (dooloop) {
-        key_press = return_key();
-        if (key_press == 113) dooloop =0;
+        if (return_key() == 113) dooloop =0;
         posX=cur_col/2-11;
         posY=cur_ln/2-3;
         win_size(pos);
