@@ -15,12 +15,9 @@ $(OBJECTS): %.o : %.c
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) $(EXECFLAGS) -o $@
+	rm -f $(OBJECTS)
 	@echo "Instalation complete."
 
 remove:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f $(TARGET)
 	@echo "Uninstalled succesfully."
-
-clean:
-	rm -f $(OBJECTS)
-	@echo "Removed all object files."
