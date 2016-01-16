@@ -24,9 +24,9 @@ void colors(void)
 {
 
         if(has_colors() == FALSE) {
-        endwin();
-        printf("Your terminal doesn\'t even have 50 shades od gray ...\n");
-        exit(1);
+            endwin();
+            printf("Your terminal doesn\'t even have 50 shades of gray ...\n");
+            exit(1);
         }
         use_default_colors();
         start_color();
