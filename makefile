@@ -1,7 +1,7 @@
 TARGET=/usr/local/bin/BCDock
 
 CC=gcc
-CFLAGS=-c -Wall -std=gnu99
+CFLAGS=-c -Wall -std=gnu99 -O2
 EXECFLAGS=-lncurses
 
 SOURCES=$(wildcard *.c)
