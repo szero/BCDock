@@ -13,6 +13,3 @@ This is a binary-coded-decimal clock made in ncurses. Intended purpouse is to ru
 * Start as usual to use default terminal colors for clock.
 * Possible start parameters `-bk`,`-rd`,`-gr`,`-yl`,`-bl`,`-mg`,`-cy`,`-wh`
 * Exit by pressing `Q`
-
-## TODO
-* Add date as start parameter
