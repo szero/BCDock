@@ -1,5 +1,5 @@
 #ifndef __SCR_HANDLER__
-#define __SCR_HANDLER__ 
+#define __SCR_HANDLER__
 void init_screen(void);
 void colors(void);
 void draw_bar(unsigned char posX,unsigned char posY, int box_nr, char pair);

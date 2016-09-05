@@ -17,7 +17,7 @@ void init_screen(void)
     refresh();
     wrefresh(mainwin);
     okno = newwin(0,0,0,0);
-    
+
 }
 
 void colors(void)
@@ -69,11 +69,11 @@ void draw_bar(unsigned char posX,unsigned char posY, int box_nr, char pair)
         mvwaddch(okno, y2, x2, ACS_LRCORNER);
         wattroff(okno, COLOR_PAIR(pair));
     }
-  
+
 }
 
 void draw_time(unsigned char posX, unsigned char posY, char bar, char bar_size, char pair)
-{  
+{
     char i,pos;
     pos =0;
 
@@ -82,25 +82,25 @@ void draw_time(unsigned char posX, unsigned char posY, char bar, char bar_size, 
             wattron(okno,A_REVERSE | COLOR_PAIR(pair));
             mvwaddch(okno,posY+6-pos,posX+1,ACS_HLINE);
             wattroff(okno,A_REVERSE | COLOR_PAIR(pair));
-    
+
         } else {
             wattron(okno,COLOR_PAIR(pair));
             mvwaddch(okno,posY+6-pos,posX+1,ACS_HLINE);
             wattroff(okno,COLOR_PAIR(pair));
-        } 
+        }
             pos = pos + 2;
     }
 }
 
 void win_size(int pos[])
-{   
+{
     getmaxyx(okno, pos[0], pos[1]);
 }
 
 void redraw(void)
 {
     wrefresh(okno);
-    refresh(); 
+    refresh();
 }
 
 void clr_scr(void)
@@ -113,7 +113,7 @@ void clr_scr(void)
             mvwaddch(okno,i,j,32);
             wattroff(okno,COLOR_PAIR(2));
         }
-    }    
+    }
 }
 
 int return_key(void)

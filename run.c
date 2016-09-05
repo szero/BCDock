@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     if (argc < 2) {
         color=1;
         } else if (CMD_IS("-bk")) {
-            color=2;    
+            color=2;
         } else if (CMD_IS("-rd")) {
             color=3;
         } else if (CMD_IS("-gr")) {
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         } else if (CMD_IS("-yl")) {
             color=5;
         } else if (CMD_IS("-bl")) {
-            color=6;    
+            color=6;
         } else if (CMD_IS("-mg")) {
             color=7;
         } else if (CMD_IS("-cy")) {
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         } else if (CMD_IS("-wh")) {
             color=9;
     }
-    
+
     while (dooloop) {
         if (return_key() == 113) dooloop =0;
         posX=cur_col/2-11;
@@ -67,4 +67,4 @@ int main(int argc, char *argv[])
     }
 end_window();
 return 0;
-}        
+}

@@ -7,7 +7,7 @@ char now_sec, now_min, now_hour, now_day, now_wday,now_month,now_year;
 time_t now;
 struct tm *now_tm;
 /*
-static char count(unsigned char i) 
+static char count(unsigned char i)
 {
     char ret=1;
     while (i/=10) ret++;
@@ -17,7 +17,7 @@ static char count(unsigned char i)
 void split_nr(char parts[],char nr_to_split)
 {
     int dig=2;
-    while (dig--) 
+    while (dig--)
     {
     parts[dig]=nr_to_split%10;
     nr_to_split/=10;
