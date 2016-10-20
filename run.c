@@ -33,11 +33,10 @@ int main(int argc, char *argv[])
         } else if (CMD_IS("-wh")) {
             color=9;
     }
-
     while (dooloop) {
         if (return_key() == 113) dooloop =0;
         posX=cur_col/2-11;
-        posY=cur_ln/2-3;
+        posY=cur_ln/2-4;
         win_size(pos);
         if (cur_ln != pos[0] || cur_col != pos[1]) {
             clr_scr();
@@ -65,6 +64,6 @@ int main(int argc, char *argv[])
         redraw();
         sleep(1);
     }
-end_window();
-return 0;
+    end_window();
+    return 0;
 }
