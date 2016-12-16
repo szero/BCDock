@@ -2,10 +2,10 @@
 
 #include <time.h>
 
-char now_sec, now_min, now_hour, now_day, now_wday,now_month,now_year;
+static char now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;
 
-time_t now;
-struct tm *now_tm;
+static time_t now;
+static struct tm *now_tm;
 /*
 static char count(unsigned char i)
 {

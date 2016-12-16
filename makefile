@@ -1,23 +1,36 @@
-TARGET=/usr/local/bin/BCDock
+IFROOT=$(shell id -u)
+ifeq ($(IFROOT),0)
+$(eval TARGET=/usr/local/bin/BCDdock)
+else
+$(eval TARGET=BCDock)
+endif
 
 CC=gcc
 CFLAGS=-c -Wall -std=gnu99 -O2
-EXECFLAGS=-lncurses
+LDFLAGS=-lncurses
 
 SOURCES=$(wildcard *.c)
-OBJECTS= $(SOURCES:%.c=%.o)
+OBJECTS=$(SOURCES:%.c=%.o)
 
-all: $(SOURCES) $(TARGET)
+all: $(OBJECTS)
 
 $(OBJECTS): %.o : %.c
 	@echo "Creating objects ..."
 	$(CC) $(CFLAGS) $< -o $@
 
+install: $(TARGET)
+
 $(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) $(EXECFLAGS) -o $@
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 	rm -f $(OBJECTS)
 	@echo "Instalation complete."
+
+clean:
+	rm -f $(OBJECTS)
+	@echo "Removed objects succesfully."
 
 remove:
 	rm -f $(TARGET)
 	@echo "Uninstalled succesfully."
+
+.PHONY: all install clean remove
