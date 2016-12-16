@@ -1,6 +1,7 @@
 IFROOT=$(shell id -u)
+
 ifeq ($(IFROOT),0)
-$(eval TARGET=/usr/local/bin/BCDdock)
+$(eval TARGET=/usr/local/bin/BCDock)
 else
 $(eval TARGET=BCDock)
 endif
