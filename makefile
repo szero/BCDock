@@ -24,7 +24,7 @@ install: $(TARGET)
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 	rm -f $(OBJECTS)
-	@echo "Instalation complete."
+	@echo "Installation complete."
 
 clean:
 	rm -f $(OBJECTS)
