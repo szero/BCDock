@@ -5,7 +5,7 @@ This is a binary-coded-decimal clock made in ncurses. Intended purpouse is to ru
 * libncurses5-dev
 
 # Installation
-* Install by typing `make install`. Installing with sudo puts binary into /usr/local/bin directory and without into current directory.
+* Install by typing `make install`. Installing with sudo puts binary into `/usr/local/bin` directory and without into current directory.
 * Uninstall by typing `make remove` or `sudo make remove`.
 
 # Usage

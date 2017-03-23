@@ -22,6 +22,7 @@ $(OBJECTS): %.o : %.c
 install: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@echo "Creating target ..."
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 	rm -f $(OBJECTS)
 	@echo "Installation complete."

@@ -19,8 +19,8 @@ void split_nr(char parts[],char nr_to_split)
     int dig=2;
     while (dig--)
     {
-    parts[dig]=nr_to_split%10;
-    nr_to_split/=10;
+    parts[dig] = nr_to_split % 10;
+    nr_to_split /= 10;
     }
 }
 
