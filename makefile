@@ -1,10 +1,7 @@
 IFROOT=$(shell id -u)
 
-ifeq ($(IFROOT),0)
-$(eval TARGET=/usr/local/bin/BCDock)
-else
-$(eval TARGET=BCDock)
-endif
+BIN=BCDock
+DESTDIR=/usr/local/bin
 
 CC=gcc
 CFLAGS=-c -Wall -std=gnu99 -O2
@@ -13,26 +10,35 @@ LDFLAGS=-lncurses
 SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:%.c=%.o)
 
-all: $(OBJECTS)
+all: $(OBJECTS) $(BIN)
 
 $(OBJECTS): %.o : %.c
 	@echo "Creating objects ..."
 	$(CC) $(CFLAGS) $< -o $@
 
-install: $(TARGET)
-
-$(TARGET): $(OBJECTS)
-	@echo "Creating target ..."
+$(BIN): $(OBJECTS)
+	@echo "Creating binary ..."
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
-	rm -f $(OBJECTS)
-	@echo "Installation complete."
+
+install:
+ifeq ($(IFROOT),0)
+	@echo "Installing into ${DESTDIR}"
+	mkdir -p ${DESTDIR}
+	install -m 755 -t ${DESTDIR} ${BIN}
+else
+	@echo "You have to be root in order to install the program!"
+endif
+
+uninstall:
+ifeq ($(IFROOT),0)
+	@echo "Removing executable from ${DESTDIR}"
+	rm -f ${DESTDIR}/${BIN}
+else
+	@echo "You have to be root in order to uninstall the program!"
+endif
 
 clean:
-	rm -f $(OBJECTS)
-	@echo "Removed objects succesfully."
+	@echo "Cleaning objects and binary ..."
+	rm -f ${OBJECTS} ${BIN}
 
-remove:
-	rm -f $(TARGET)
-	@echo "Uninstalled succesfully."
-
-.PHONY: all install clean remove
+.PHONY: all install uninstall clean
