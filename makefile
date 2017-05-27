@@ -20,7 +20,7 @@ $(BIN): $(OBJECTS)
 	@echo "Creating binary ..."
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 
-install:
+install: all
 ifeq ($(IFROOT),0)
 	@echo "Installing into ${DESTDIR}"
 	mkdir -p ${DESTDIR}
