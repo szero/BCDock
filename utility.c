@@ -1,11 +1,11 @@
-#include "utility.h"
-
 #include <time.h>
+
+#include "utility.h"
 
 static char now_sec, now_min, now_hour, now_day, now_wday, now_month, now_year;
 
 static time_t now;
-static struct tm *now_tm;
+static struct tm* now_tm;
 /*
 static char count(unsigned char i)
 {
@@ -14,19 +14,18 @@ static char count(unsigned char i)
     return ret;
 }
 */
-void split_nr(char parts[],char nr_to_split)
+void split_nr(char parts[], char nr_to_split)
 {
-    int dig=2;
-    while (dig--)
-    {
-    parts[dig] = nr_to_split % 10;
-    nr_to_split /= 10;
+    int dig = 2;
+    while (dig--) {
+        parts[dig] = nr_to_split % 10;
+        nr_to_split /= 10;
     }
 }
 
 void maketime(void)
 {
-    now = time (NULL);
+    now = time(NULL);
     now_tm = localtime(&now);
     now_sec = now_tm->tm_sec;
     now_min = now_tm->tm_min;

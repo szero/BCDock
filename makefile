@@ -4,7 +4,7 @@ BIN=BCDock
 DESTDIR=/usr/local/bin
 
 CC=gcc
-CFLAGS=-c -Wall -std=gnu99 -O2
+CFLAGS=-c -Wall -std=gnu99 -O3
 LDFLAGS=-lncurses
 
 SOURCES=$(wildcard *.c)
